@@ -20,6 +20,7 @@ namespace UWPWeatherAppService.Controllers
 
             var weather = await Models.OpenWeatherMapProxy.GetWeather(latitude, longitude);
 
+            //better implemented with models
             ViewBag.Name = weather.name;
             ViewBag.Temp = ((int)weather.main.temp).ToString();
             ViewBag.Description = weather.weather[0].description;
